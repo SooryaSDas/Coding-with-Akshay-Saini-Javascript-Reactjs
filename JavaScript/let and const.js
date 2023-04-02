@@ -8,3 +8,10 @@ console.log(c); // output will be : 50
 const b;
 b = 40; // display the error missing initializer in const declaration.
 
+
+// let 
+    // can't be re-declare the variable.
+
+// const
+    // can't be re-declare the variable.
+    // can't be re-defined the variable.
