@@ -3,7 +3,7 @@
 #AKSHAY_SAINI
 
 Engineer by profession and a Teacher by heart. ❤️
-Building NamasteDev, while teaching on my Youtube channel.
+Building NamasteDev, while teaching on his Youtube channel.
 akshai make Coding & Interview preparation videos. 😇
 
 # JAVASCRIPT
