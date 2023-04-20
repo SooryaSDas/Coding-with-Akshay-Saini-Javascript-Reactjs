@@ -63,7 +63,7 @@ const reduceoutput = arr3.reduce(function(acc,curr){
 
 console.log(reduceoutput); // 50
 // reduce method takes 2 arguments
-// 1, accurate 2, current
+// 1, accumilator 2, current
 // curr - > current array values
 // acc -> for calculating and accurate the values
 // reduce take 2 values 1, function 2, value(if we want to assign any value to acc we can assign with second value, same as line number 51)
