@@ -1,0 +1,33 @@
+Chapter 01 - Inception
+
+
+
+1) What is Emmet?
+
+Emmet uses different abbrivations and short expression depending on what's passed, and then dynamically converts the abbrevation into the full code. 
+eg : html:5, ! -> create the full basic html code.
+ul>li
+div.id
+
+2) Difference between a Library and Framework?
+
+Library target a specific functionality, and Framework tries to provide everything require for develop a full application.
+
+3) What is CDN? Why do we use it?
+
+A CDN improves efficiency by introducing intermediary servers between the client and the website server. These CDN servers manage some of the client-server communications. They decrease web traffic to the web server, reduce bandwidth consumption, and improve the use experience of your applications.
+
+4) Why is React known as React?
+
+React is a javascript libarary that helps developers to build user interfaces - the things you interact with on websites. It has become popular because of its simlicity and flexibility and is used by companies like facebook, instagram and airbnb. And it's called React because it reacts. It was developed by facebook ( a site that user interface development and more effectively change(REACT to) what the use sees when they're doing thing like mouse clicking, submitting and typing.
+
+5) What is crossorigin in script tag?
+
+The crossorigin attribute sets the mode of the request to an Http cors request. Web pages often make request to load resources on other servers. here is where cors come in. a cross-origin request is a request for a resource. for example style sheets, iframe, images, font or script from another domain.
+
+6) What is diference between React and ReactDOM ?
+
+When building web applications in react, we use two packages react and react-dom. the react package holds the react source for components, state, props and all the code that is react. the react-dom package as the name implies is the glue between react and the dom. often, we will only use it for one single thing: mounting your application to the index.html file with reactdom.render().  
+the reason react and reactdom were split into two libraries was due to the arrival of react native. react components are such a great way to organize ui that it has now spread to mobile to react is used in web and in mobile. react-dom is used only in web apps.
+
+
