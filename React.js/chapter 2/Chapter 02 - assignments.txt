@@ -1,0 +1,35 @@
+1)  What is `NPM`?
+
+	NPM is the worl's largest software registry. The open-source web project developers use it from the entire world to share and borrow packages. The npm also acts as a command-line utility for the node.js project for installing packages in the project, dependency management, and even version management.
+3 components of npm : website, command line interface, registry.
+
+2) What is `Parcel/Webpack`? Why do we need it?
+
+	Bundlers are able to perform many more tasks when building a web application like post processing of code or structuring your application for supporting lazy loading.
+parcel : bundle all your assests, automatic transforms, zero configuration code splitting, hot module replacement, friendly error loading, minify, file watcher alogorithm, cleaning our code, dev and production build, bundling, image optimization, caching while development, compression, compatable with older version of browsers, https on dev, manage port number, consistent hashing algorithms, zero config bundler
+
+3) What is `.parcel-cache`
+
+	Store information about our poject when parcel builds it, so that when it rebuilds, it doesn't have to re-parse and re-analyze everything from scarch. it's a key reason why parcel can be so fast in development mode.
+
+4)  What is `npx` ?
+
+	NPX Stands for Node Package eXecute. it is simply an npm package runner. it allows developers to execute any javascript package available on the npm registry without even installing it. NPX is installed automatically with npm version.
+
+5)  What is difference between `dependencies` vs `devDependencies`
+
+	Devdependencies are the packages that our project depends on. but dependencies may serve various purposes. for example, you may need a dependecy to build your proeject, another to run it, another to tet it, and so on. 
+the dependencies object specifies the packages that you need to run your code, for example react, react-dom.
+devdependencies object maps the packages that you will only need during the development of your project. you don't need them to run your code in production, for example, a testing framework.
+
+6) - What is Tree Shaking?
+
+	Tree shaking is a term commonly used within a javascript context to describe the removal of dead code. it relies on the import and export statements to detect if code modules are exported and imported for use between javascript files.
+
+7) What is Hot Module Replacement?
+
+	It exchanges, add or removes modules while an application is running, without a full reload. this is significally speed up development in a few ways: retain application state which is lost during a full reload. save valuable development time by only updating what's changed. 
+
+8) What is `.gitignore`? What should we add and not add into it?
+
+	gitignore file lists all of the files that are local to a project that git should not push to githyb.
