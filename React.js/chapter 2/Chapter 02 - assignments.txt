@@ -32,4 +32,16 @@ devdependencies object maps the packages that you will only need during the deve
 
 8) What is `.gitignore`? What should we add and not add into it?
 
-	gitignore file lists all of the files that are local to a project that git should not push to githyb.
+	gitignore file lists all of the files that are local to a project that git should not push to github.
+
+9) What is the difference between `package.json` and `package-lock.json` ?
+
+	The "package.json" file defines the rules required to run your application and install dependencies. On the other hand, the "package-lock.json" file holds detailed information on all the dependencies installed based on the package.json rules.
+
+10) Why should I not modify `package-lock.json`?
+
+	It is a generated file and is not designed to be manually edited. its purpose is to track the entire tree of dependencies (including dependencies of dependencies) and the exact version of each dependency. you should commit package-lock.json to your code repository.
+
+11) What is `node_modules` ? Is it a good idea to push that on git?
+
+	Node modules provide a way to re-use code in your node application. 
