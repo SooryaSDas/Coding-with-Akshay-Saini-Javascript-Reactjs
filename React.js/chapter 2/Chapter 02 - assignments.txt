@@ -44,4 +44,22 @@ devdependencies object maps the packages that you will only need during the deve
 
 11) What is `node_modules` ? Is it a good idea to push that on git?
 
-	Node modules provide a way to re-use code in your node application. 
+	Node modules provide a way to re-use code in your node application. In some ways, they're similar to a class in other language, like C# or java. in many ways, they're completely different from a class. if you've written a nove application, you've used modules, you just may no have known it. 
+The default option is here not to commit the node_modules folder, you should instead add it to the .gitignore file.
+
+12) What is the `dist` folder?
+
+	The dist folder is where the compiled code is stored. this is the code that is ready to be deployed to a production environment. the src and dist folders are essential for any software development project. they help to keep the code organized and ensure that the compiled version is always up-to-date.
+
+13) - What is `browserlists`?
+
+	in the javascript world, there is a wonderful library called browserlist. it's a pretty simple idea:browserlist allows you to describe which browser your sited needs to support, in a bunch of useful ways. then any tool that needs this information can read it from a central spot.
+
+14) Read about: ^ - caret and ~ - tilda ? 
+
+	npm uses the tilde(~) and caret(^) to designate which patch and minor version to use repectively. so if you see ~1.0.2 it means to install version 1.0.2 or the latest patch version such as 1.0.4
+if you see ^1.0.2 it means to install version 1/0/2 or the latest minor or patch version such as 1.1.0.
+
+15) Read about Script types in html?
+
+	The type attribute of the script element indicates the type of script represented by the element : a classic script, a javascript module, an import map, or a data block.
