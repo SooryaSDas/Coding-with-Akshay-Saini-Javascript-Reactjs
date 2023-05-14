@@ -30,4 +30,25 @@ The crossorigin attribute sets the mode of the request to an Http cors request. 
 When building web applications in react, we use two packages react and react-dom. the react package holds the react source for components, state, props and all the code that is react. the react-dom package as the name implies is the glue between react and the dom. often, we will only use it for one single thing: mounting your application to the index.html file with reactdom.render().  
 the reason react and reactdom were split into two libraries was due to the arrival of react native. react components are such a great way to organize ui that it has now spread to mobile to react is used in web and in mobile. react-dom is used only in web apps.
 
+7) What is difference between react.development.js and react.production.js files via CDN?
+
+The production version will be optimized in a few ways - smaller file size by minimizing variable names and removing white spaces, etc - whereas the development version will remain readable, might include source maps, etc.. making it better for debugging and development usage. functionally they're the same.
+
+react.development.js --> More developer friendly, readable, will take more size.
+react.production.js --> Minfied code that is not developer friendly as it focused on decreasing in file 				size, code efficiency.
+
+8) What is async and defer?
+
+<script>
+	Let's start by defining what <script> without any attributes does. The HTML file will be parsed until the script file is hit, at that point parsing will stop and a request will be made to fetch the file (if it's external). The script will then be executed before parsing is resumed.
+
+<script async>
+	async downloads the file during html parsing and will parse the html parser to execute it when it has finished downloading.
+
+<script defer>
+	defer downloads the file during html parsing and will only execute it after the parser has completed. defer script are also guraenteed to execute in the order that they appear in the document.
+
+async scripts are executed as soon as the script is loaded, so it doen't gurantee the order of execution (a script you included at the end may execute before the first script file)
+defer scripts gurantees the order of execution in which they appear in the page.
+
 
