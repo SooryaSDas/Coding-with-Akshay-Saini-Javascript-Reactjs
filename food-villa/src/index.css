@@ -1,0 +1,42 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.logo{
+  width: 100px;
+}
+.nav-items > ul{
+  display: flex;
+  list-style-type: none;
+  font-size: 20px;
+  margin-right: 50px;
+}
+
+.nav-items > ul > li{
+  padding: 10px;
+  margin: 10px;
+}
+.res-container{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.res-card{
+  margin: 17px;
+  padding: 5px;
+  width: 200px;
+  background-color: "#0f0f0f";
+  overflow: hidden;
+}
+.res-card:hover{ 
+  border: 1px solid black;
+  cursor: pointer;
+}
+.search{
+  padding: 10px;
+}
+.res-logo{
+  width: 100%;
+}
