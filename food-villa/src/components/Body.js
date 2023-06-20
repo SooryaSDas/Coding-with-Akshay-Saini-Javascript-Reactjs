@@ -1,5 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import React,{useEffect, useState} from 'react';
+import Shimmer from "./Shimmer";
+
 const Body = ()=>{
 
   const [listofRestaurants, setListofRestaurants] = useState([]);
@@ -15,10 +17,13 @@ const Body = ()=>{
     console.log(json)
     setListofRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
-    if(listofRestaurants.length === 0){
-      return "loading"
-    }
-    return(
+
+  // conditional rendering
+    // if(listofRestaurants.length === 0){
+    //   return <Shimmer/>;
+    // }
+    
+    return( listofRestaurants.length === 0 ? <Shimmer/> :
       <div className="body">
         <div className="filter">
           <button className="filter-btn" onClick={()=>{
