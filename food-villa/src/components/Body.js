@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import React,{useEffect, useState} from 'react';
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = ()=>{
 
@@ -21,6 +22,11 @@ const Body = ()=>{
     // console.log(json)
     setListofRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
+  };
+
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus === false){
+    window.alert("check your internet connection");
   }
 
   // conditional rendering
