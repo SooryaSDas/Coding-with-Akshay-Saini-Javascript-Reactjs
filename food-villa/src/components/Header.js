@@ -1,5 +1,7 @@
 import React,{ useState } from "react";
 import { LOGO_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
+import "../index.css"
 
 const Header = ()=>{
 
@@ -10,18 +12,20 @@ const Header = ()=>{
     return(
       <div className="header">
         <div className="logo-container">
+          <Link to="/">
           <img
             className="logo" 
             src={LOGO_URL} 
             alt="logo" 
           />
+          </Link>
         </div>
         <div className="nav-items">
           <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Cart</li>
+            <Link to="/"><li>Home</li></Link>
+            <Link to="/about"> <li>About Us</li></Link>
+            <Link to="/contact"> <li>Contact Us</li> </Link>
+            <Link to="/cart"> <li>Cart</li> </Link>
             <button className="login" 
                     onClick={()=>{btnname ==="login" ? 
                     setBtnname("logout") : setBtnname("login")  ;
