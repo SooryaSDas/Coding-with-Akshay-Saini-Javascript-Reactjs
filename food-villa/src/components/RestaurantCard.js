@@ -11,13 +11,13 @@ const RestaurantCard = (props)=>{
     deliveryTime
   } = resData?.data;
     return(
-      <div className="res-card" style={{backgroundColor : "#f0f0f0"}}>
+      <div className="w-56 p-5 m-2 shadow-lg bg-pink-50">
         <img 
           className ="res-logo"
           src = {CDN_URL + cloudinaryImageId} 
           alt="hotel" 
          />
-        <h3>{name} </h3>
+        <h3 className="font-bold text-xl ">{name} </h3>
         <h4>{[cuisines]} </h4>
         <h4>{avgRating} stars</h4>
         <h4>{costForTwo / 100} FOR TWO</h4>
