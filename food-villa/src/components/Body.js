@@ -4,7 +4,6 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { RES_LIST } from "../utils/constants";
-import { CAROUSEL } from "../utils/constants";
 import Carousel from "./Carousel";
 
 
@@ -17,6 +16,7 @@ const Body = ()=>{
   const [slides, setSlides] = useState([]);
   const [delTime, setDelTime] = useState();
 
+
   useEffect(()=>{
       // console.log("useEffect")
       fetchData();
@@ -25,11 +25,11 @@ const Body = ()=>{
   const fetchData = async()=>{
     const data = await fetch(RES_LIST)
     const json = await data.json();
-     console.log(json)
+      console.log(json)
     setListofRestaurants(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     setSlides(json?.data?.cards[0]?.data?.data?.cards);
-    setDelTime(json?.data?.cards[2]?.data?.data?.cards);
+    setDelTime(json?.data?.cards[2]?.data?.data?.cards?.data);
 
   };
 
@@ -77,9 +77,14 @@ const Body = ()=>{
                 (res)=> res.data.avgRating > 4
                 );
                 setFilteredRestaurant(filteredList)}}>
-                Top Rated Restaurant
+                Rating
            </button>
-       
+           <button className="filter-btn p-4" onClick={()=>{
+              // filter logic here
+              const delTime = filteredRestaurant.sort((res,res2)=> res.data.deliveryTime - res2.data.deliveryTime);
+                setDelTime(delTime)}}>
+                Delivery Time
+           </button>
         </div>
         <div className="flex flex-wrap">
           {filteredRestaurant.map((restaurant)=>{
