@@ -27,6 +27,23 @@ const MenuItem = ({item}) => {
             alt={item?.name}
           />
         )}
+        <div className=" flex justify-evenly items-center w-[100px] h-[34px] mt-1.5 text-gray-count outline-none border bg-white border-gray ">
+          <button
+            className="text-xl text-gray-count text-green-600 font-bold"
+
+          >
+            {" "}
+            -{" "}
+          </button>
+          <span className="text-base text-green-600 font-semibold"> 1 </span>
+          <button
+            className="text-green text-xl text-green-600 font-bold"
+
+          >
+            {" "}
+            +{" "}
+          </button>
+        </div>
       </div>
     </div>  )
 }
