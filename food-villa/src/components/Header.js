@@ -31,13 +31,13 @@ const Header = ()=>{
             <Link to="/cart"> <li className="px-5"><b>Cart</b></li> </Link>
           </ul>
         </div>
-        <button className="px-5" 
+        <button className="pr-5" 
                     onClick={()=>{btnname ==="login" ? 
                     setBtnname("logout") : setBtnname("login")  ;
                       console.log(setBtnname);
                       }}>
                 <b> {btnname}</b>
-            </button>
+        </button>
       </div>
     );
   };

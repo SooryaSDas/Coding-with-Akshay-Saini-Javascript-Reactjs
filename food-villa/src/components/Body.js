@@ -14,7 +14,9 @@ const Body = ()=>{
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSerchText] = useState("");
   const [slides, setSlides] = useState([]);
-  const [delTime, setDelTime] = useState();
+  const [delTime, setDelTime] = useState([]);
+  const [lowtoHigh , setLowToHigh] = useState([]);
+  const [hightolow, setHighToLow] = useState([]);
 
 
   useEffect(()=>{
@@ -30,7 +32,8 @@ const Body = ()=>{
     setFilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards);
     setSlides(json?.data?.cards[0]?.data?.data?.cards);
     setDelTime(json?.data?.cards[2]?.data?.data?.cards?.data);
-
+    setLowToHigh(json?.data?.cards[2]?.data?.data?.cards?.data);
+    setHighToLow(json?.data?.cards[2]?.data?.data?.cards?.data);
   };
 
   const onlineStatus = useOnlineStatus();
@@ -56,13 +59,20 @@ const Body = ()=>{
          })}
  
         </div>
-        <div className="filter flex m-40 pt-6 shadow-sm my-5">
-          <div className="res">
+        <div className="filter flex pt-6 shadow-sm my-5 mx-9">
+          <div className="ml-12">
             <h1 className="font-bold text-2xl">{listofRestaurants.length} restaurants</h1>
           </div>
-          <div className="search">
-            <input type="text" className="focus:bg-blue-200" value={searchText} onChange={(e)=> setSerchText(e.target.value)} />
-            <button className="p-2 m-2 bg-purple-500 text-white rounded-md" onClick={()=>{
+          <div className="ml-64">
+          {/* <input class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" 
+                placeholder="Search for anything..." 
+                type="text" 
+                name="search"
+                value={searchText} onChange={(e)=> setSerchText(e.target.value)}
+                /> */}
+
+            <input type="text" className=" w-60 h-10 rounded-sm border-black-300" value={searchText} onChange={(e)=> setSerchText(e.target.value)} placeholder="Search for anything..." />
+            <button className="p-2 m-2 bg-red-950 text-white rounded-md" onClick={()=>{
               // filter the restuarant card and update the ui
               // console.log(searchText)
 
@@ -85,9 +95,22 @@ const Body = ()=>{
                 setDelTime(delTime)}}>
                 Delivery Time
            </button>
+           <button className="filter-btn p-4" onClick={()=>{
+              // filter logic here
+              const lowtoHigh = filteredRestaurant.sort((res,res2)=> res.data.costForTwo/100 - res2.data.costForTwo/100);
+              setLowToHigh(lowtoHigh)}}>
+               Cost Low to High
+           </button>
+           <button className="filter-btn p-4" onClick={()=>{
+              // filter logic here
+              const hightolow = filteredRestaurant.sort((res,res2)=> res2.data.costForTwo/100 - res.data.costForTwo/100);
+              setLowToHigh(hightolow)}}>
+               Cost High to Low
+           </button>
         </div>
-        <div className="flex flex-wrap">
+        <div className="flex flex-wrap m-9 mx-16">
           {filteredRestaurant.map((restaurant)=>{
+            // console.log(restaurant)
             return(
              <Link to ={"restaurants/"+restaurant.data.id}> <RestaurantCard key={restaurant.data.id} resData={restaurant}/> </Link>
             )
