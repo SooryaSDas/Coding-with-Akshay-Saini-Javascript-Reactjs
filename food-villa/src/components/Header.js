@@ -3,13 +3,14 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import "../index.css";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+import { useSelector } from "react-redux";
 const Header = ()=>{
 
   // const btnname = "login"
   let [btnname , setBtnname] = useState("login");
-
   const onlineStatus = useOnlineStatus();
+  const totalItemsCount = useSelector((store) => store.cart.totalItemCount);
+  console.log("Header:", totalItemsCount);
 
     return(
       <div className="flex justify-between shadow-xl sm:bg-white-100 md:bg-white-100 xl:bg-white-50">
@@ -28,7 +29,7 @@ const Header = ()=>{
             <Link to="/"><li className="px-5"><b>Home</b></li></Link>
             <Link to="/about"> <li className="px-5"><b>About Us</b></li></Link>
             <Link to="/contact"> <li className="px-5"><b>Contact Us</b></li> </Link>
-            <Link to="/cart"> <li className="px-5"><b>Cart</b></li> </Link>
+            <Link to="/cart"> <li className="px-5"><b>Cart</b> <span className="text-white bg-green-800 p-1 rounded-full"><b>{totalItemsCount}</b></span> </li> </Link>
           </ul>
         </div>
         <button className="pr-5" 
