@@ -25,7 +25,7 @@ const Header = ()=>{
         </div>
         <div className="nav-items">
           <ul className="flex py-10">
-            <li className="px-4">Online Status : {onlineStatus ? "Online" : "Offline"}</li>
+            {/* <li className="px-4">Online Status : {onlineStatus ? "Online" : "Offline"}</li> */}
             <Link to="/"><li className="px-5"><b>Home</b></li></Link>
             <Link to="/about"> <li className="px-5"><b>About Us</b></li></Link>
             <Link to="/contact"> <li className="px-5"><b>Contact Us</b></li> </Link>

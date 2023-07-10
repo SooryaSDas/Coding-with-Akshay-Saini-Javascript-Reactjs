@@ -50,8 +50,6 @@ const Cart = () => {
           <p className="font-bold text-sm">To Pay</p>
           <p className="font-bold  text-sm">{"₹ " + getItemTotal()}</p>
         </div>
-      
-       
       </div>
     </div>
   ) : (
