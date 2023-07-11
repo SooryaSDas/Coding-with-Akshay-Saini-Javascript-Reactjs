@@ -50,13 +50,8 @@ const Body = ()=>{
     // console.log(listofRestaurants)
     return( listofRestaurants?.length === 0 ? <Shimmer/> :
       <div className="body ">
-        <div className="flex flex-row bg-black h-96 p-6 overflow-hidden">
-         {slides.map((carouselsdata)=>{
-            return(
-              <Carousel key={carouselsdata.data.bannerId} carousaldata={carouselsdata}/>
-            
-            )
-         })}
+        <div className="">
+         <Carousel/>
  
         </div>
         <div className="filter flex pt-6 shadow-sm my-5 mx-9">
