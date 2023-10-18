@@ -6,7 +6,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USERAVATAR } from "../utils/constants";
+import { BG_URL, USERAVATAR } from "../utils/constants";
 
 
 const Login = ()=>{
@@ -95,7 +95,7 @@ const Login = ()=>{
         <div>
             <Header/>
             <div className="absolute">
-                <img src="https://assets.nflxext.com/ffe/siteui/vlv3/73334647-ad51-42a9-b07b-93298cc2a8e1/2b0fca4f-c15c-4622-9efc-572c4a408c30/IN-en-20230605-popsignuptwoweeks-perspective_alpha_website_large.jpg" alt="" />
+                <img src={BG_URL} alt="" />
             </div>
             <form onSubmit={(e)=> e.preventDefault()} className="absolute w-3/12 p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-70">
                 <h1 className="font-bold text-3xl py-4">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
