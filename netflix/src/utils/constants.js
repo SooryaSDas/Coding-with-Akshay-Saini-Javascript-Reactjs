@@ -7,7 +7,7 @@ export const API_OPTIONS = {
     headers : {
         accept : "application/json",
         Authorization : 
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4MDI0MjQ2ZTA1MDIwNDU4MzMyNDdiOTllNjBhNjQ0NyIsInN1YiI6IjYxY2YxZjhjNWM1NjM0MDA0MzExMDg4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3dsJo_HxPT-wxRUI-JKZjSwbfuBSHlkO35mHdbzgUdM"
+            "Bearer " + process.env.REACT_APP_TMDB_KEY
     },
 };
 
@@ -20,3 +20,6 @@ export const SUPPORTED_LANGUAGES = [
     { identifier : "hindi", name : "Hindi"},
     { identifier : "spanish", name : "Spanish"}
 ];
+
+// for the security keys are added to .env file and this file in gitignore , 
+export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY

@@ -20,8 +20,6 @@ const Login = ()=>{
     const email = useRef(null); // null is the initial value
     const password = useRef(null);
 
-
-
     const handleButtonClick = ()=>{
         // validate user data
 
@@ -30,7 +28,7 @@ const Login = ()=>{
 
         // const message = checkValidateData(name.current.value, email.current.value, password.current.value);
         const message = checkValidateData(email.current.value, password.current.value);
-        console.log(message)
+        // console.log(message)
         setErrorMessage(message)
         if(message) return;
 
@@ -46,7 +44,8 @@ const Login = ()=>{
             .then((userCredential) => {
             // Signed up 
             const user = userCredential.user;
-            console.log(user)
+            // console.log(user)
+
             /// for updating the profile - display name, profile pic
             updateProfile(auth.currentUser, {
                 displayName: name.current.value, photoURL: USERAVATAR
@@ -75,7 +74,7 @@ const Login = ()=>{
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user)
+                // console.log(user)
                 //  navigate("/browse")
             })
             .catch((error) => {
