@@ -10,17 +10,23 @@ function App() {
   const [message, setMessage] = useState("Start Guessing...");
   const [numdis, setNumDis] = useState("?")
 
-  const again = ()=>{
+  function again(){
     setScore(20);
     setMessage("Start Guessing...");
     setNumDis("?");
     document.body.style.backgroundColor = "black";
-    setGuessNum()
+    setGuessNum('')
+    ran();
+  }
+
+  const ran = ()=>{
+    setRandum(Math.trunc(Math.random()*20) + 1)
   }
 
   useEffect(()=>{
-    const srtnumber = setRandum(Math.trunc(Math.random()*20) + 1);
+    ran();
     // console.log(randum)
+    
   },[])
 
   console.log(randum)
